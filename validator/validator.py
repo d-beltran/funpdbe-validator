@@ -72,7 +72,7 @@ class Validator(object):
         try:
             jsonschema.validate(self.json_data, self.schema)
             return True
-        except jsonschema.exceptions.ValidationError as err:
+        except jsonschema.ValidationError as err:
             self.error_log = "JSON does not comply with schema: %s" % err
             return False
 
@@ -87,7 +87,7 @@ class Validator(object):
             with open(path, "r") as json_file:
                 try:
                     return json.load(json_file)
-                except json.decoder.JSONDecodeError as err:
+                except ValueError as err:
                     self.error_log = "JSON error: %s" % err
                     return None
         except IOError as ioerr:

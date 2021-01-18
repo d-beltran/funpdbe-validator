@@ -1,8 +1,9 @@
 .idea*
 .cache*
 *vcs.xml
-sample_data/*
 local-test.py
 .DS_Store
 *.pyc
 **/*egg-info
+local_usage.py
+local_data*

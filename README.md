@@ -35,21 +35,31 @@ This package contains two classes which handle the validation of FunPDBe JSON fi
 * Validator()
 * ResidueIndexes()
 
-Example:
+Basic example:
 ```
 from validator.validator import Validator
 from validator.residue_index import ResidueIndexes
 
-validator = Validator("funpdbe_resource_name") # Same as in the JSON
-validator.load_schema("data/funpdbe_schema.json")
-validator.load_json("data/funpdbe_data.json")
+def run():
+    """
+    Basic example of running the PDBe-KB/FunPDBe validator
+    :return:
+    """
+    validator = Validator("name of the resource") # Same as in the JSON
+    validator.load_schema()
+    validator.load_json("/path/to/data.json")
 
-if validator.basic_checks() and validator.validate_against_schema():
-    # Passed data validations
-    residue_indexes = ResidueIndexes(validator.json_data)
-    if residue_indexes.check_every_residue():
-        # Passed the index validation
-        return True
+    if validator.basic_checks() and validator.validate_against_schema():
+        print("Passed data validations")
+        residue_indexes = ResidueIndexes(validator.json_data)
+        if residue_indexes.check_every_residue():
+            print("Passed the index validation")
+            return True
+    return False
+
+
+if __name__ == "__main__":
+    run()
 ```
 
 ### Running the tests

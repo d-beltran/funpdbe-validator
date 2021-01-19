@@ -16,7 +16,7 @@ License.
 """
 
 import unittest
-from validator.validator import Validator
+from funpdbe_validator.validator import Validator
 
 
 class TestValidator(unittest.TestCase):

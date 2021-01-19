@@ -7,6 +7,6 @@ install:
   - pip install jsonschema
   - pip install requests
 script:
-  - pytest tests --cov=validator
+  - pytest tests --cov=funpdbe_validator
 after_success:
   - codecov

@@ -20,12 +20,18 @@ Please note that the client is written in Python3, and the dependencies have to 
 
 ### Installing
 
-#### Checking out this repository
+#### Checking out this repository from GitHub
 
 ```
 $ git clone https://gitlab.ebi.ac.uk/pdbe-kb/funpdbe/funpdbe-validator.git
 $ cd funpdbe-validator
 $ pip3 install -r requirements.txt
+```
+
+#### Installing with PIP
+
+```
+pip install funpdbe-validator
 ```
 
 ### Basic usage
@@ -37,8 +43,8 @@ This package contains two classes which handle the validation of FunPDBe JSON fi
 
 Basic example:
 ```
-from validator.validator import Validator
-from validator.residue_index import ResidueIndexes
+from funpdbe_validator.validator import Validator
+from funpdbe_validator.residue_index import ResidueIndexes
 
 def run():
     """

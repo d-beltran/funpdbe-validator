@@ -21,16 +21,15 @@ import re
 import requests
 
 
-
 class Validator(object):
     """
     Validates FunPDBe JSON files
 
     Example usage:
-    validator = Validator()
-    validator.load_schema("path/to/schema")
-    validator.load_json("path/to/json")
-    if validator.basic_checks() and validator.validate_against_schema():
+    funpdbe_validator = Validator()
+    funpdbe_validator.load_schema("path/to/schema")
+    funpdbe_validator.load_json("path/to/json")
+    if funpdbe_validator.basic_checks() and funpdbe_validator.validate_against_schema():
         # the input JSON is a valid FunPDBe file
     """
 

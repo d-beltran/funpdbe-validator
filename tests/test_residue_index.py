@@ -18,7 +18,7 @@ License.
 import json
 from unittest import TestCase
 
-from validator.residue_index import ResidueIndexes
+from funpdbe_validator.residue_index import ResidueIndexes
 
 with open("data/test_data.json", "r") as mock_data_file:
     mock_data = json.load(mock_data_file)

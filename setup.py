@@ -6,10 +6,15 @@ def readme():
         return f.read()
 
 
+def license():
+    with open('LICENSE') as f:
+        return f.read()
+
+
 setup(
     name="funpdbe_validator",
-    version="0.1.0",
-    description="Validate JSON by FunPDBe Schema",
+    version="1.0.0",
+    description="Validate PDBe-KB JSONs by FunPDBe Schema",
     long_description=readme(),
     classifiers=[
         "Development Status :: 3 - Beta",
@@ -17,10 +22,10 @@ setup(
         "Programming Language :: Python :: 3",
     ],
     keywords="json validator",
-    url="https://gitlab.ebi.ac.uk/pdbe-kb/funpdbe/funpdbe-validator",
+    url="https://github.com/PDBe-KB/funpdbe-validator",
     author="Mihaly Varadi",
     author_email="mvaradi@ebi.ac.uk",
-    license="Apache 2",
+    license=license(),
     packages=["validator"],
     install_requires=["jsonschema", "requests"],
     test_suite="tests",

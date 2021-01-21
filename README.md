@@ -68,6 +68,21 @@ if __name__ == "__main__":
     run()
 ```
 
+### Using the "basic_run.py"
+
+This script runs the validator for all the JSON files found at a specified path. **Note**: the path has to end with a /
+
+```
+python basic_run.py dataResourceName path/to/json/files/
+```
+
+### Using the Dockerized version
+
+```
+docker build --tag funpdbe-validator-basic .
+docker run funpdbe-validator-basic dataResourceName path/to/json/files/
+```
+
 ### Running the tests
 
 Running tests for the client is performed simply by using

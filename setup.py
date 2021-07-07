@@ -22,7 +22,7 @@ setup(
     author_email="mvaradi@ebi.ac.uk",
     license_file="LICENSE",
     packages=["funpdbe_validator"],
-    install_requires=["jsonschema", "requests"],
+    install_requires=["jsonschema", "requests", "gemmi"],
     test_suite="tests",
     tests_require=["pytest", "pytest-cov"],
     include_package_data=True,

@@ -6,6 +6,7 @@ install:
   - pip install pytest-cov
   - pip install jsonschema
   - pip install requests
+  - pip install gemmi
 script:
   - pytest tests --cov=funpdbe_validator
 after_success:

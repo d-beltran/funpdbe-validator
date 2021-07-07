@@ -8,7 +8,7 @@ def readme():
 
 setup(
     name="funpdbe-validator",
-    version="1.1.1",
+    version="1.1.1a",
     description="Validate PDBe-KB JSONs by FunPDBe Schema",
     long_description_content_type='text/markdown',
     long_description=readme(),

@@ -94,7 +94,7 @@ class ResidueIndexes(object):
             if inscode ==False or inscode ==None:
                 inscode=""
             auth_residue_number="%s%s" %(auth_resnum,inscode)
-            self.mmcif_data.setdefault(chain,{})[auth_residue_number]=auth_resname
+            self.mmcif_data.setdefault(chain,{})[auth_residue_number]=auth_resname.lower()
 
     def _get_residue_numbering_from_mmcif(self, chain_data) :
 
@@ -110,7 +110,7 @@ class ResidueIndexes(object):
             return False
         for residue in chain_data["residues"]:
             depositor_residue_number = residue["pdb_res_label"]
-            depositor_aa_type = residue["aa_type"]
+            depositor_aa_type = residue["aa_type"].lower()
             if depositor_residue_number in self.mmcif_data[chain_id] :
                 if self.mmcif_data[chain_id][depositor_residue_number] ==depositor_aa_type : 
                     #print(chain_id,depositor_residue_number, depositor_aa_type)

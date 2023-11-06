@@ -101,7 +101,9 @@ class ResidueIndexes(object):
         """Match the residues using mmcif file instead of PDBe API
         """
         match_flag=False
-        chain_id = chain_data["chain_label"]
+        # Need to include "-" in chain for PDBTM data
+        # it takes only the chain and ignores everything after the dash
+        chain_id = chain_data["chain_label"].split("-",1)[0]
         if not "residues" in chain_data.keys():
             return False
         if chain_id not in self.mmcif_data :
@@ -132,7 +134,9 @@ class ResidueIndexes(object):
         :param chain_data: JSON sub-data
         :return: True if residue numbering is valid, False if not
         """
-        chain_id = chain_data["chain_label"]
+        # Need to include "-" in chain for PDBTM data
+        # it takes only the chain and ignores everything after the dash
+        chain_id = chain_data["chain_label"].split("-",1)[0]
         url = "%s%s/chain/%s" % (self.api_url, self.pdb_id, chain_id)
         try:
             response = requests.get(url)

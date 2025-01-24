@@ -43,29 +43,9 @@ This package contains two classes which handle the validation of FunPDBe JSON fi
 
 Basic example:
 ```
-from funpdbe_validator.validator import Validator
-from funpdbe_validator.residue_index import ResidueIndexes
+from funpdbe_validator.run import run
 
-def run():
-    """
-    Basic example of running the PDBe-KB/FunPDBe validator
-    :return:
-    """
-    validator = Validator("name of the resource") # Same as in the JSON
-    validator.load_schema()
-    validator.load_json("/path/to/data.json")
-
-    if validator.basic_checks() and validator.validate_against_schema():
-        print("Passed data validations")
-        residue_indexes = ResidueIndexes(validator.json_data)
-        if residue_indexes.check_every_residue():
-            print("Passed the index validation")
-            return True
-    return False
-
-
-if __name__ == "__main__":
-    run()
+run('sample.json')
 ```
 Using mmcif instead of PDBe-API for valiation:
 ResidueIndexes class has optional arguments- 'mmcif_mode' and 'cif_file'. When mmcif_mode is set True, the validator uses given mmcif (set using cif_fie) for validation instead of PDBe-API.
